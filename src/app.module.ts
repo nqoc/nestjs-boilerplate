@@ -1,6 +1,6 @@
-import 'reflect-metadata';
-import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import 'reflect-metadata'; // cai nay la file cau hinh cho ung dung, khi chay tren docker thi can phai thay doi cac gia tri trong file nay de phu hop voi moi truong chay tren docker
+import { Module } from '@nestjs/common'; // cai nay la file cau hinh cho ung dung, khi chay tren docker thi can phai thay doi cac gia tri trong file nay de phu hop voi moi truong chay tren docker
+import { TypeOrmModule } from '@nestjs/typeorm'; // cai nay la file cau hinh cho ung dung, khi chay tren docker thi can phai thay doi cac gia tri trong file nay de phu hop voi moi truong chay tren docker
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './modules/auth/auth.module';
@@ -13,7 +13,7 @@ import { SharedModule } from '@shared/services/shared.module';
 import { MediaModule } from './modules/media/media.module';
 import { JwtService } from '@nestjs/jwt';
 import { AdminModule } from './modules/admin/admin.module';
-import { APP_FILTER } from '@nestjs/core';
+import { APP_FILTER } from '@nestjs/core'; // cai nay la file cau hinh cho ung dung, khi chay tren docker thi can phai thay doi cac gia tri trong file nay de phu hop voi moi truong chay tren docker
 import { BadRequestExceptionFilter } from '@core/filters/bad-request.filter';
 import { AcceptLanguageResolver, I18nModule, QueryResolver } from 'nestjs-i18n';
 import * as path from 'path';
@@ -24,14 +24,19 @@ import { InternalServerErrorExceptionFilter } from '@core/filters/internal-serve
 import { NotFoundExceptionFilter } from '@core/filters/not-found.filter';
 import { UnprocessableEntityExceptionFilter } from '@core/filters/unprocess-entity.filter';
 import { OrderModule } from '@modules/order/order.module';
+import { PostModule } from '@modules/post/post.module';
+import { TaskModule } from '@modules/task/task.module';
 
 @Module({
   imports: [
+    // cai nay la file cau hinh cho ung dung, khi chay tren docker thi can phai thay doi cac gia tri trong file nay de phu hop voi moi truong chay tren docker
     AuthModule,
     AdminModule,
     MediaModule,
     UserModule,
     OrderModule,
+    PostModule,
+    TaskModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',
@@ -58,7 +63,7 @@ import { OrderModule } from '@modules/order/order.module';
       ],
     }),
   ],
-  controllers: [AppController, AuthController],
+  controllers: [AppController, AuthController], // cai nay la file cau hinh cho ung dung, khi chay tren docker thi can phai thay doi cac gia tri trong file nay de phu hop voi moi truong chay tren docker
   providers: [
     AppService,
     JwtService,

@@ -1,4 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger'; // file nay dung de khai bao cac thuoc tinh cho DTO (Data Transfer Object) trong NestJS, giup cho viec tu dong sinh ra cac file Swagger API documentation.
 import { IsEmail, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class UpdateProfileUser {

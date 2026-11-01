@@ -20,3 +20,5 @@ export class CreatePaymentMethodsTable1720428043300 implements MigrationInterfac
         `);
     }
 }
+// gia tri cua file nay la dung de tao bang payment_methods trong database, bao gom cac cot id, name, created_at va updated_at. id la primary key va tu dong tang gia tri.
+// name la mot chuoi ky tu. created_at va updated_at la cac cot luu tru thoi gian tao va cap nhat cua ban ghi.

@@ -1,4 +1,5 @@
 import {
+  // import cac thu vien can thiet de tao entity trong TypeORM. entity la mot class dung de khai bao mot bang trong database, bao gom cac cot va quan he giua cac bang. PrimaryGeneratedColumn la mot decorator dung de khai bao mot cot la primary key va tu dong tang gia tri. Column la mot decorator dung de khai bao mot cot trong bang. ManyToOne la mot decorator dung de khai bao quan he nhieu-mot giua hai bang. CreateDateColumn, UpdateDateColumn va DeleteDateColumn la cac decorator dung de khai bao cac cot tu dong luu tru thoi gian tao, cap nhat va xoa cua ban ghi
   Entity,
   PrimaryGeneratedColumn,
   Column,

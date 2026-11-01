@@ -136,5 +136,9 @@
   "PAY-0001": {
     "error_code": 211,
     "message": "Payment order ID not found"
+  },
+  "POST-0001": {
+    "error_code": 404,
+    "message": "Post not found"
   }
 }

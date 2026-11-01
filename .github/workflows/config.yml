@@ -1,4 +1,6 @@
 name: Build and Deploy
+# file nay dung de cau hinh workflow tren github actions de tu dong build va deploy code khi co thay doi tren branch main. 
+# Khi co thay doi tren branch main, workflow se tu dong build code va deploy len server.
 on:
     push:
         paths:

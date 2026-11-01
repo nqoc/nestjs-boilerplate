@@ -1,3 +1,4 @@
+// file nay la file chinh de khoi tao ung dung NestJS, bao gom cau hinh cho ung dung, bao gom swagger, middleware va global filters
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';

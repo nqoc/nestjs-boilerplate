@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common'; // file nay la file cau hinh cho ung dung, khi chay tren docker thi can phai thay doi cac gia tri trong file nay de phu hop voi moi truong chay tren docker
 import { ConfigService } from '@nestjs/config';
 import type { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import fs from 'fs';

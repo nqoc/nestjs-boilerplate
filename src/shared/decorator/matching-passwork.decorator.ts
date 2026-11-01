@@ -4,7 +4,7 @@ import {
   ValidationOptions,
 } from 'class-validator';
 
-export function MatchingPassword(
+export function MatchingPassword( // check password co giong nhau hay khong, dung de validate password va confirm password trong DTO
   property: string,
   validationOptions?: ValidationOptions,
 ) {

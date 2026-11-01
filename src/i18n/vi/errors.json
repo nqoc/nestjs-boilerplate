@@ -1,5 +1,6 @@
+
 {
-  "LO-104-EMAIL": {
+    "LO-104-EMAIL": {
     "error_code": 104,
     "message": "Lỗi cú pháp",
     "details": [
@@ -136,5 +137,9 @@
   "PAY-0001": {
     "error_code": 211,
     "message": "Không tìm thấy ID lệnh thanh toán"
+  },
+  "POST-0001": {
+    "error_code": 404,
+    "message": "Không tìm thấy bài viết"
   }
 }

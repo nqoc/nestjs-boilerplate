@@ -1,5 +1,5 @@
 # Git flow handling
-
+`file dung de huong dan cach su dung git flow de phat trien va quan ly code trong du an, bao gom cac buoc tao branch, commit, push va tao pull request (PR) cho cac tinh nang moi va cac loi (bug) can sua.`
 ## Branches
 
 **develop**: for development

@@ -1,21 +1,21 @@
 import {
   registerDecorator,
+  ValidationArguments,
   ValidationOptions,
   ValidatorConstraint,
   ValidatorConstraintInterface,
-  ValidationArguments,
 } from 'class-validator';
-import { validCurrencyCodes } from '@core/constant';
 
-@ValidatorConstraint({ async: false })
-class IsCurrencyConstraint implements ValidatorConstraintInterface {
-  validate(currency: any, args: ValidationArguments) {
+@ValidatorConstraint({ name: 'isCurrencyValid', async: false })
+export class IsCurrencyConstraint implements ValidatorConstraintInterface {
+  validate(currency: string, args: ValidationArguments) {
     if (typeof currency !== 'string') {
       return false;
     }
 
-    // Convert currency code to uppercase to make the validation case-insensitive
+    const validCurrencyCodes = ['USD', 'VND'];
     const upperCaseCurrency = currency.toUpperCase();
+
     return validCurrencyCodes.includes(upperCaseCurrency);
   }
 
@@ -25,7 +25,7 @@ class IsCurrencyConstraint implements ValidatorConstraintInterface {
 }
 
 export function IsCurrencyValid(validationOptions?: ValidationOptions) {
-  return function (object: Object, propertyName: string) {
+  return function (object: object, propertyName: string) {
     registerDecorator({
       target: object.constructor,
       propertyName: propertyName,
