@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common'; // file nay dung de check error va tra ve thong tin loi cho client, bao gom message va stack trace
 import { ValidationError } from 'class-validator';
 import { I18nContext } from 'nestjs-i18n';
 import { ConfigService } from '@nestjs/config';
@@ -54,14 +54,43 @@ export class ErrorService {
     return transformedError;
   }
 
-  private combine(err_msg: string, i18n: I18nContext, errors: object[] = []) {
-    console.log(errors);
-    return Object.assign(i18n.t(`errors.${err_msg}`), {});
+  private combine(err_msg: string, i18n: I18nContext, _errors: object[] = []) {
+    if (!i18n) {
+      return {
+        error_code: err_msg,
+        message: err_msg,
+      };
+    }
+
+    const translated = i18n.t(`errors.${err_msg}`);
+    if (typeof translated === 'object' && translated !== null) {
+      return Object.assign(translated, {});
+    }
+
+    return {
+      message: err_msg,
+    };
   }
 
   private combineDev(err_msg: string, i18n: I18nContext, stackTrace: any) {
-    return Object.assign(i18n.t(`errors.${err_msg}`), {
+    if (!i18n) {
+      return {
+        error_code: err_msg,
+        message: err_msg,
+        details: stackTrace,
+      };
+    }
+
+    const translated = i18n.t(`errors.${err_msg}`);
+    if (typeof translated === 'object' && translated !== null) {
+      return Object.assign(translated, {
+        details: stackTrace,
+      });
+    }
+
+    return {
+      message: err_msg,
       details: stackTrace,
-    });
+    };
   }
 }
